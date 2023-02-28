@@ -2,7 +2,8 @@ import { describe, expect, test } from '@jest/globals';
 import {
 	calculateScore,
 	calculateScoreTOFandFOF,
-	calculateScoreFH
+	calculateScoreFH,
+	calculateScoreSS
 } from './yahtzee';
 
 describe('Upper section combinations', () => {
@@ -117,6 +118,17 @@ describe('Lower section combinations', () => {
 
 		//Act
 		const actualScore = calculateScoreFH(dices);
+
+		//Assert
+		expect(actualScore).toEqual(expectedScore);
+	});
+	test('Vérification du calcul de la combinaison Small Straight', () => {
+		//Arrange
+		const dices = [2, 3, 4, 5, 2];
+		const expectedScore = 30;
+
+		//Act
+		const actualScore = calculateScoreSS(dices);
 
 		//Assert
 		expect(actualScore).toEqual(expectedScore);

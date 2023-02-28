@@ -85,6 +85,21 @@ export function calculateScoreFH(dices: number[]) {
 	if (trio && duo) {
 		score = 25;
 	}
+	return score;
+}
+
+export function calculateScoreSS(dices: number[]) {
+	let score: number = 0;
+	let counter = 0;
+
+	for (let i = 1; i < dices.length; i++) {
+		if (dices[i] === dices[i - 1] + 1) {
+			counter++;
+		}
+	}
+	if (counter >= 3) {
+		score = 30;
+	}
 
 	return score;
 }
