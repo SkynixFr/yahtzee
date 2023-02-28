@@ -24,3 +24,31 @@ export function calculateScore(dices: number[], category: string) {
 	}
 	return score;
 }
+
+export function calculateScoreTOF(dices: number[]) {
+	let score: number = 0;
+	let counts: { [key: number]: number } = {
+		1: 0,
+		2: 0,
+		3: 0,
+		4: 0,
+		5: 0,
+		6: 0
+	};
+
+	for (let i = 0; i < dices.length; i++) {
+		if (!counts[dices[i]]) {
+			counts[dices[i]] = 1;
+		} else {
+			counts[dices[i]] += 1;
+		}
+	}
+
+	for (const [count, value] of Object.entries(counts)) {
+		if (value >= 3) {
+			score = dices.reduce((sum: number, current: number) => sum + current);
+		}
+	}
+
+	return score;
+}
