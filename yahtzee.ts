@@ -1,6 +1,12 @@
 let dices: number[] = [];
-let categories = ['Ones', 'Twos', 'Threes', 'Fours', 'Fives', 'Sixes'];
-
+const categoriesPoints: { [key: string]: number } = {
+	Ones: 1,
+	Twos: 2,
+	Threes: 3,
+	Fours: 4,
+	Fives: 5,
+	Sixes: 6
+};
 export function rollDice() {
 	for (let i = 0; i < 5; i++) {
 		dices.push(Math.floor(Math.random() * 6) + 1);
@@ -9,15 +15,10 @@ export function rollDice() {
 
 export function calculateScore(dices: number[], category: string) {
 	let score: number = 0;
-	for (let i = 0; i < 5; i++) {
-		if (category === 'Ones' && dices[i] === 1) {
-			score += 1;
-		}
-		if (category === 'Twos' && dices[i] === 2) {
-			score += 2;
-		}
-		if (category === 'Threes' && dices[i] === 3) {
-			score += 3;
+
+	for (let i = 0; i < dices.length; i++) {
+		if (dices[i] === categoriesPoints[category]) {
+			score += categoriesPoints[category];
 		}
 	}
 	return score;
