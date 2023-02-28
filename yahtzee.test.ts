@@ -1,7 +1,7 @@
 import { describe, expect, test } from '@jest/globals';
 import {
 	calculateScore,
-	calculateScoreTOFandFOF,
+	calculateScoreTOFandFOFandYahtzee,
 	calculateScoreFH,
 	calculateScoreSSandLS
 } from './yahtzee';
@@ -93,7 +93,7 @@ describe('Lower section combinations', () => {
 		const expectedScore = 8;
 
 		//Act
-		const actualScore = calculateScoreTOFandFOF(dices, 3);
+		const actualScore = calculateScoreTOFandFOFandYahtzee(dices, 3);
 
 		//Assert
 		expect(actualScore).toEqual(expectedScore);
@@ -105,7 +105,7 @@ describe('Lower section combinations', () => {
 		const expectedScore = 8;
 
 		//Act
-		const actualScore = calculateScoreTOFandFOF(dices, 4);
+		const actualScore = calculateScoreTOFandFOFandYahtzee(dices, 4);
 
 		//Assert
 		expect(actualScore).toEqual(expectedScore);
@@ -141,6 +141,18 @@ describe('Lower section combinations', () => {
 
 		//Act
 		const actualScore = calculateScoreSSandLS(dices);
+
+		//Assert
+		expect(actualScore).toEqual(expectedScore);
+	});
+
+	test('Vérification du calcul de la combinaison Yahtzee', () => {
+		//Arrange
+		const dices = [6, 6, 6, 6, 6];
+		const expectedScore = 50;
+
+		//Act
+		const actualScore = calculateScoreTOFandFOFandYahtzee(dices, 5);
 
 		//Assert
 		expect(actualScore).toEqual(expectedScore);

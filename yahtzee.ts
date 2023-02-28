@@ -25,7 +25,10 @@ export function calculateScore(dices: number[], category: string) {
 	return score;
 }
 
-export function calculateScoreTOFandFOF(dices: number[], nbCount: number) {
+export function calculateScoreTOFandFOFandYahtzee(
+	dices: number[],
+	nbCount: number
+) {
 	let score: number = 0;
 	let counts: { [key: number]: number } = {
 		1: 0,
@@ -45,7 +48,9 @@ export function calculateScoreTOFandFOF(dices: number[], nbCount: number) {
 	}
 
 	for (const [count, value] of Object.entries(counts)) {
-		if (value >= nbCount) {
+		if (value === 5) {
+			score = 50;
+		} else if (value >= nbCount) {
 			score = dices.reduce((sum: number, current: number) => sum + current);
 		}
 	}
