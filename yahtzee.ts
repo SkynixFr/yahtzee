@@ -12,7 +12,7 @@ function rollDice() {
 export default function calculateScore(dices: number[], category: string) {
 	let score: number = 0;
 	for (let i = 0; i < 5; i++) {
-		if (category === 'Ones') {
+		if (category === 'Ones' && dices[i] === 1) {
 			score += 1;
 		}
 	}
