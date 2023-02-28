@@ -3,8 +3,7 @@ import {
 	calculateScore,
 	calculateScoreTOFandFOF,
 	calculateScoreFH,
-	calculateScoreSS,
-	calculateScoreLS
+	calculateScoreSSandLS
 } from './yahtzee';
 
 describe('Upper section combinations', () => {
@@ -129,7 +128,7 @@ describe('Lower section combinations', () => {
 		const expectedScore = 30;
 
 		//Act
-		const actualScore = calculateScoreSS(dices);
+		const actualScore = calculateScoreSSandLS(dices);
 
 		//Assert
 		expect(actualScore).toEqual(expectedScore);
@@ -141,7 +140,7 @@ describe('Lower section combinations', () => {
 		const expectedScore = 40;
 
 		//Act
-		const actualScore = calculateScoreLS(dices);
+		const actualScore = calculateScoreSSandLS(dices);
 
 		//Assert
 		expect(actualScore).toEqual(expectedScore);
