@@ -1,12 +1,25 @@
 import { describe, expect, test } from '@jest/globals';
-import calculateScore from './yahtzee';
+import { calculateScore } from './yahtzee';
 
 describe('GetPointsFromRoll', () => {
-	test('Vérification 1 = 1*nombre de dé =1', () => {
+	test('Vérification du calcul des dès de valeur 1', () => {
 		//Arrange
 		const dices = [1, 1, 1, 2, 3];
 		const category = 'Ones';
 		const expectedScore = 3;
+
+		//Act
+		const actualScore = calculateScore(dices, category);
+
+		//Assert
+		expect(actualScore).toEqual(expectedScore);
+	});
+
+	test('Vérification du calcul des dès de valeur 2', () => {
+		//Arrange
+		const dices = [1, 1, 2, 2, 3];
+		const category = 'Twos';
+		const expectedScore = 4;
 
 		//Act
 		const actualScore = calculateScore(dices, category);
