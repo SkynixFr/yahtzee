@@ -1,5 +1,9 @@
 import { describe, expect, test } from '@jest/globals';
-import { calculateScore, calculateScoreTOFandFOF } from './yahtzee';
+import {
+	calculateScore,
+	calculateScoreTOFandFOF,
+	calculateScoreFH
+} from './yahtzee';
 
 describe('Upper section combinations', () => {
 	test('Vérification du calcul des dès de valeur 1', () => {
@@ -101,6 +105,18 @@ describe('Lower section combinations', () => {
 
 		//Act
 		const actualScore = calculateScoreTOFandFOF(dices, 4);
+
+		//Assert
+		expect(actualScore).toEqual(expectedScore);
+	});
+
+	test('Vérification du calcul de la combinaison Full House', () => {
+		//Arrange
+		const dices = [1, 1, 1, 3, 3];
+		const expectedScore = 25;
+
+		//Act
+		const actualScore = calculateScoreFH(dices);
 
 		//Assert
 		expect(actualScore).toEqual(expectedScore);

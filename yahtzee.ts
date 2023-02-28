@@ -52,3 +52,39 @@ export function calculateScoreTOFandFOF(dices: number[], nbCount: number) {
 
 	return score;
 }
+
+export function calculateScoreFH(dices: number[]) {
+	let score: number = 0;
+	let counts: { [key: number]: number } = {
+		1: 0,
+		2: 0,
+		3: 0,
+		4: 0,
+		5: 0,
+		6: 0
+	};
+	let duo: boolean = false;
+	let trio: boolean = false;
+
+	for (let i = 0; i < dices.length; i++) {
+		if (!counts[dices[i]]) {
+			counts[dices[i]] = 1;
+		} else {
+			counts[dices[i]] += 1;
+		}
+	}
+
+	for (const [count, value] of Object.entries(counts)) {
+		if (value === 3) {
+			trio = true;
+		}
+		if (value === 2) {
+			duo = true;
+		}
+	}
+	if (trio && duo) {
+		score = 25;
+	}
+
+	return score;
+}
