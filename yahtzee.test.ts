@@ -1,5 +1,9 @@
 import { describe, expect, test } from '@jest/globals';
-import { calculateScore, calculateScoreTOF } from './yahtzee';
+import {
+	calculateScore,
+	calculateScoreTOF,
+	calculateScoreFOF
+} from './yahtzee';
 
 describe('Upper section combinations', () => {
 	test('Vérification du calcul des dès de valeur 1', () => {
@@ -89,6 +93,18 @@ describe('Lower section combinations', () => {
 
 		//Act
 		const actualScore = calculateScoreTOF(dices);
+
+		//Assert
+		expect(actualScore).toEqual(expectedScore);
+	});
+
+	test('Vérification du calcul de la combinaison Four of a kind', () => {
+		//Arrange
+		const dices = [1, 1, 1, 4, 1];
+		const expectedScore = 8;
+
+		//Act
+		const actualScore = calculateScoreFOF(dices);
 
 		//Assert
 		expect(actualScore).toEqual(expectedScore);
