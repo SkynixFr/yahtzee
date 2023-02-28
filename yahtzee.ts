@@ -103,3 +103,19 @@ export function calculateScoreSS(dices: number[]) {
 
 	return score;
 }
+
+export function calculateScoreLS(dices: number[]) {
+	let score: number = 0;
+	let counter = 0;
+
+	for (let i = 1; i < dices.length; i++) {
+		if (dices[i] === dices[i - 1] + 1) {
+			counter++;
+		}
+	}
+	if (counter >= 4) {
+		score = 40;
+	}
+
+	return score;
+}

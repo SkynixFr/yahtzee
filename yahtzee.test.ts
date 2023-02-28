@@ -3,7 +3,8 @@ import {
 	calculateScore,
 	calculateScoreTOFandFOF,
 	calculateScoreFH,
-	calculateScoreSS
+	calculateScoreSS,
+	calculateScoreLS
 } from './yahtzee';
 
 describe('Upper section combinations', () => {
@@ -129,6 +130,18 @@ describe('Lower section combinations', () => {
 
 		//Act
 		const actualScore = calculateScoreSS(dices);
+
+		//Assert
+		expect(actualScore).toEqual(expectedScore);
+	});
+
+	test('Vérification du calcul de la combinaison large Straight', () => {
+		//Arrange
+		const dices = [2, 3, 4, 5, 6];
+		const expectedScore = 40;
+
+		//Act
+		const actualScore = calculateScoreLS(dices);
 
 		//Assert
 		expect(actualScore).toEqual(expectedScore);
