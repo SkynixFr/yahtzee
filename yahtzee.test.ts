@@ -40,4 +40,43 @@ describe('GetPointsFromRoll', () => {
 		//Assert
 		expect(actualScore).toEqual(expectedScore);
 	});
+
+	test('Vérification du calcul des dès de valeur 4', () => {
+		//Arrange
+		const dices = [4, 4, 4, 4, 5];
+		const category = 'Fours';
+		const expectedScore = 16;
+
+		//Act
+		const actualScore = calculateScore(dices, category);
+
+		//Assert
+		expect(actualScore).toEqual(expectedScore);
+	});
+
+	test('Vérification du calcul des dès de valeur 5', () => {
+		//Arrange
+		const dices = [1, 3, 5, 2, 3];
+		const category = 'Fives';
+		const expectedScore = 5;
+
+		//Act
+		const actualScore = calculateScore(dices, category);
+
+		//Assert
+		expect(actualScore).toEqual(expectedScore);
+	});
+
+	test('Vérification du calcul des dès de valeur 6', () => {
+		//Arrange
+		const dices = [1, 6, 6, 6, 3];
+		const category = 'Sixes';
+		const expectedScore = 18;
+
+		//Act
+		const actualScore = calculateScore(dices, category);
+
+		//Assert
+		expect(actualScore).toEqual(expectedScore);
+	});
 });

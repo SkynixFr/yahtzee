@@ -7,6 +7,7 @@ const categoriesPoints: { [key: string]: number } = {
 	Fives: 5,
 	Sixes: 6
 };
+
 export function rollDice() {
 	for (let i = 0; i < 5; i++) {
 		dices.push(Math.floor(Math.random() * 6) + 1);
