@@ -27,4 +27,17 @@ describe('GetPointsFromRoll', () => {
 		//Assert
 		expect(actualScore).toEqual(expectedScore);
 	});
+
+	test('Vérification du calcul des dès de valeur 3', () => {
+		//Arrange
+		const dices = [1, 3, 2, 2, 3];
+		const category = 'Threes';
+		const expectedScore = 6;
+
+		//Act
+		const actualScore = calculateScore(dices, category);
+
+		//Assert
+		expect(actualScore).toEqual(expectedScore);
+	});
 });

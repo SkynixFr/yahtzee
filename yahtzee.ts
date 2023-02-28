@@ -16,6 +16,9 @@ export function calculateScore(dices: number[], category: string) {
 		if (category === 'Twos' && dices[i] === 2) {
 			score += 2;
 		}
+		if (category === 'Threes' && dices[i] === 3) {
+			score += 3;
+		}
 	}
 	return score;
 }
