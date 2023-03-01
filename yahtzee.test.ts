@@ -3,7 +3,8 @@ import {
 	calculateScore,
 	calculateScoreTOFandFOFandYahtzee,
 	calculateScoreFH,
-	calculateScoreSSandLS
+	calculateScoreSSandLS,
+	calculateScoreLuck
 } from './yahtzee';
 
 describe('Upper section combinations', () => {
@@ -153,6 +154,18 @@ describe('Lower section combinations', () => {
 
 		//Act
 		const actualScore = calculateScoreTOFandFOFandYahtzee(dices, 5);
+
+		//Assert
+		expect(actualScore).toEqual(expectedScore);
+	});
+
+	test('Vérification du calcul de la combinaison Chance', () => {
+		//Arrange
+		const dices = [1, 3, 4, 4, 6];
+		const expectedScore = 18;
+
+		//Act
+		const actualScore = calculateScoreLuck(dices);
 
 		//Assert
 		expect(actualScore).toEqual(expectedScore);

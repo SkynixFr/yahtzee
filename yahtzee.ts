@@ -110,3 +110,11 @@ export function calculateScoreSSandLS(dices: number[]) {
 
 	return score;
 }
+
+export function calculateScoreLuck(dices: number[]) {
+	let score: number = 0;
+	for (let i = 0; i < dices.length; i++) {
+		score = dices.reduce((sum: number, current: number) => sum + current);
+	}
+	return score;
+}
