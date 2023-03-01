@@ -8,7 +8,7 @@ import {
 } from './yahtzee';
 
 describe('Upper section combinations', () => {
-	test('Vérification du calcul des dès de valeur 1', () => {
+	test('Vérification du calcul des dés de valeur 1', () => {
 		//Arrange
 		const dices = [1, 1, 1, 2, 3];
 		const category = 'Ones';
@@ -21,7 +21,7 @@ describe('Upper section combinations', () => {
 		expect(actualScore).toEqual(expectedScore);
 	});
 
-	test('Vérification du calcul des dès de valeur 2', () => {
+	test('Vérification du calcul des dés de valeur 2', () => {
 		//Arrange
 		const dices = [1, 1, 2, 2, 3];
 		const category = 'Twos';
@@ -34,7 +34,7 @@ describe('Upper section combinations', () => {
 		expect(actualScore).toEqual(expectedScore);
 	});
 
-	test('Vérification du calcul des dès de valeur 3', () => {
+	test('Vérification du calcul des dés de valeur 3', () => {
 		//Arrange
 		const dices = [1, 3, 2, 2, 3];
 		const category = 'Threes';
@@ -47,7 +47,7 @@ describe('Upper section combinations', () => {
 		expect(actualScore).toEqual(expectedScore);
 	});
 
-	test('Vérification du calcul des dès de valeur 4', () => {
+	test('Vérification du calcul des dés de valeur 4', () => {
 		//Arrange
 		const dices = [4, 4, 4, 4, 5];
 		const category = 'Fours';
@@ -60,7 +60,7 @@ describe('Upper section combinations', () => {
 		expect(actualScore).toEqual(expectedScore);
 	});
 
-	test('Vérification du calcul des dès de valeur 5', () => {
+	test('Vérification du calcul des dés de valeur 5', () => {
 		//Arrange
 		const dices = [1, 3, 5, 2, 3];
 		const category = 'Fives';
@@ -73,7 +73,7 @@ describe('Upper section combinations', () => {
 		expect(actualScore).toEqual(expectedScore);
 	});
 
-	test('Vérification du calcul des dès de valeur 6', () => {
+	test('Vérification du calcul des dés de valeur 6', () => {
 		//Arrange
 		const dices = [1, 6, 6, 6, 3];
 		const category = 'Sixes';
